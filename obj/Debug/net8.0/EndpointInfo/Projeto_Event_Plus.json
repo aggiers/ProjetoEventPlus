@@ -870,7 +870,7 @@
           "exibe": {
             "type": "boolean"
           },
-          "usuarioID": {
+          "idUsuario": {
             "type": "string",
             "format": "uuid",
             "nullable": true
@@ -878,7 +878,7 @@
           "usuarios": {
             "$ref": "#/components/schemas/Usuario"
           },
-          "eventoID": {
+          "idEvento": {
             "type": "string",
             "format": "uuid",
             "nullable": true
