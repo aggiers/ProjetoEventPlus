@@ -57,7 +57,7 @@ namespace Projeto_Event_Plus.Controllers
         }
 
         /// <summary>
-        /// Endpoint  para Listar Eventos Incritos no Banco de Dados
+        /// Endpoint  para Deletar Eventos Incritos no Banco de Dados
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>

@@ -1,6 +1,7 @@
 ﻿using Projeto_Event_Plus.Domains;
 using Projeto_Event_Plus.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Projeto_Event_Plus.Controllers
 {

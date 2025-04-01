@@ -292,9 +292,7 @@
         "tags": [
           "Login"
         ],
-        "summary": "Endpoint para realizar a autenticação (Login)",
         "requestBody": {
-          "description": "Email e senha do usuário",
           "content": {
             "application/json": {
               "schema": {
@@ -367,7 +365,7 @@
         "tags": [
           "Presenca"
         ],
-        "summary": "Endpoint  para Listar Eventos Incritos no Banco de Dados",
+        "summary": "Endpoint  para Deletar Eventos Incritos no Banco de Dados",
         "parameters": [
           {
             "name": "id",

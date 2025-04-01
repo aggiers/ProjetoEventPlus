@@ -74,13 +74,6 @@
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="M:Projeto_Event_Plus.Controllers.LoginController.Login(Projeto_Event_Plus.DTO.LoginDTO)">
-            <summary>
-            Endpoint para realizar a autenticação (Login)
-            </summary>
-            <param name="loginDTO">Email e senha do usuário</param>
-            <returns>Token de acesso</returns>
-        </member>
         <member name="M:Projeto_Event_Plus.Controllers.PresencaController.Post(Projeto_Event_Plus.Domains.PresencaEvento)">
             <summary>
             Endpoint  para Increver-se Num Evento no Banco de Dados
@@ -97,7 +90,7 @@
         </member>
         <member name="M:Projeto_Event_Plus.Controllers.PresencaController.Deletar(System.Guid)">
             <summary>
-            Endpoint  para Listar Eventos Incritos no Banco de Dados
+            Endpoint  para Deletar Eventos Incritos no Banco de Dados
             </summary>
             <param name="id"></param>
             <returns></returns>
