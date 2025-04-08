@@ -2,6 +2,8 @@
 using Projeto_Event_Plus.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
+using Azure.AI.ContentSafety;
+using Azure;
 
 namespace Projeto_Event_Plus.Controllers
 {
@@ -11,92 +13,47 @@ namespace Projeto_Event_Plus.Controllers
     public class ComentarioController : Controller
     {
         private readonly IComentarioRepository _comentarioRepository;
+        private readonly ContentSafetyClient _contentSafetyClient;
 
-        public ComentarioController(IComentarioRepository comentarioRepository)
+        public ComentarioController(ContentSafetyClient contentSafetyClient,IComentarioRepository comentarioRepository)
         {
             _comentarioRepository = comentarioRepository;
+            _contentSafetyClient = contentSafetyClient;
 
         }
 
-        /// <summary>
-        /// Endpoint para cadastrar Comentarios
-        /// </summary>
-        /// <param name="novoComentario"></param>
-        /// <returns></returns>
         [HttpPost]
-        public IActionResult Post(ComentarioEvento novoComentario)
+        public async Task<IActionResult> Post(ComentarioEvento comentario)
         {
             try
             {
-                _comentarioRepository.Cadastrar(novoComentario);
-                return Created();
+                if (string.IsNullOrEmpty(comentario.Descricao))
+                {
+                    return BadRequest("O texto a ser moderado não pode estar vazio!");
+                }
+
+                // criar objeto de análise do content safety
+                var request = new AnalyzeTextOptions(comentario.Descricao);
+
+                // chamar a api do content safety
+                Response<AnalyzeTextResult> response = await _contentSafetyClient.AnalyzeTextAsync(request);
+
+                // verificar se o texto analisado tem alguma severidade
+                bool temConteudoImproprio = response.Value.CategoriesAnalysis.Any(c => c.Severity > 0);
+
+                comentario.Exibe = !temConteudoImproprio;
+
+                _comentarioRepository.Cadastrar(comentario);
+
+                return Ok();
+
             }
             catch (Exception e)
             {
-
                 return BadRequest(e.Message);
             }
+        } 
 
-        }
-
-        /// <summary>
-        /// Endpoint para listar Comentarios
-        /// </summary>
-        /// <returns></returns>
-        [HttpGet("{id}")]
-        public IActionResult Get(Guid id)
-        {
-            try
-            {
-                List<ComentarioEvento> listaDeComentarios = _comentarioRepository.Listar(id);
-
-                return Ok(listaDeComentarios);
-            }
-            catch (Exception e)
-            {
-
-                return BadRequest(e.Message);
-            }
-        }
-
-        /// <summary>
-        /// Endpoint para deletar Comentarios
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        [HttpDelete("{id}")]
-        public IActionResult Delete(Guid id)
-        {
-            try
-            {
-                _comentarioRepository.Deletar(id);
-                return NoContent();
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-
-        /// <summary>
-        /// Endpoint para buscar Comentarios por Id dos usuarios
-        /// </summary>
-        /// <param name="UsuarioId"></param>
-        /// <param name="EventoId"></param>
-        /// <returns></returns>
-        [HttpGet("BuscarPorIdUsuario/{UsuarioId},{EventoId}")]
-        public IActionResult GetById(Guid UsuarioId, Guid EventoId)
-        {
-            try
-            {
-                ComentarioEvento novoFeedback = _comentarioRepository.BuscarPorIdUsuario(UsuarioId, EventoId);
-                return Ok(novoFeedback);
-            }
-            catch (Exception error)
-            {
-
-                return BadRequest(error.Message);
-            }
-        }
+        
     }
 }

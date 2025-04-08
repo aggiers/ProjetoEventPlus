@@ -386,3 +386,7 @@ C:\Users\47688244803\Desktop\Projeto_Event_Plus\obj\Debug\net8.0\Projeto_Event_P
 C:\Users\47688244803\Desktop\Projeto_Event_Plus\obj\Debug\net8.0\Projeto_Event_Plus.genruntimeconfig.cache
 C:\Users\47688244803\Desktop\Projeto_Event_Plus\obj\Debug\net8.0\ref\Projeto_Event_Plus.dll
 C:\Users\47688244803\Desktop\Projeto_Event_Plus\obj\Debug\net8.0\Projeto_Event_Plus.sourcelink.json
+C:\Users\47688244803\Desktop\Projeto_Event_Plus\bin\Debug\net8.0\Microsoft.Azure.CognitiveServices.ContentModerator.dll
+C:\Users\47688244803\Desktop\Projeto_Event_Plus\bin\Debug\net8.0\Microsoft.Rest.ClientRuntime.dll
+C:\Users\47688244803\Desktop\Projeto_Event_Plus\bin\Debug\net8.0\Microsoft.Rest.ClientRuntime.Azure.dll
+C:\Users\47688244803\Desktop\Projeto_Event_Plus\bin\Debug\net8.0\Azure.AI.ContentSafety.dll

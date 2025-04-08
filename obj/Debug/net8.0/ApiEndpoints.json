@@ -8,61 +8,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "novoComentario",
+        "Name": "comentario",
         "Type": "Projeto_Event_Plus.Domains.ComentarioEvento",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Projeto_Event_Plus.Controllers.ComentarioController",
-    "Method": "Get",
-    "RelativePath": "api/Comentario/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Projeto_Event_Plus.Controllers.ComentarioController",
-    "Method": "Delete",
-    "RelativePath": "api/Comentario/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Projeto_Event_Plus.Controllers.ComentarioController",
-    "Method": "GetById",
-    "RelativePath": "api/Comentario/BuscarPorIdUsuario/{UsuarioId},{EventoId}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "UsuarioId",
-        "Type": "System.Guid",
-        "IsRequired": true
-      },
-      {
-        "Name": "EventoId",
-        "Type": "System.Guid",
         "IsRequired": true
       }
     ],

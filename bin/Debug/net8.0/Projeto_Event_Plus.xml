@@ -4,34 +4,6 @@
         <name>Projeto_Event_Plus</name>
     </assembly>
     <members>
-        <member name="M:Projeto_Event_Plus.Controllers.ComentarioController.Post(Projeto_Event_Plus.Domains.ComentarioEvento)">
-            <summary>
-            Endpoint para cadastrar Comentarios
-            </summary>
-            <param name="novoComentario"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Projeto_Event_Plus.Controllers.ComentarioController.Get(System.Guid)">
-            <summary>
-            Endpoint para listar Comentarios
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Projeto_Event_Plus.Controllers.ComentarioController.Delete(System.Guid)">
-            <summary>
-            Endpoint para deletar Comentarios
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Projeto_Event_Plus.Controllers.ComentarioController.GetById(System.Guid,System.Guid)">
-            <summary>
-            Endpoint para buscar Comentarios por Id dos usuarios
-            </summary>
-            <param name="UsuarioId"></param>
-            <param name="EventoId"></param>
-            <returns></returns>
-        </member>
         <member name="M:Projeto_Event_Plus.Controllers.EventoController.Get">
             <summary>
             Endpoint  para Listar Todos os Eventos Presentes no Banco de Dados
