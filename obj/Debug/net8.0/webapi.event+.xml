@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>webapi.event+</name>
+    </assembly>
+    <members>
+        <member name="M:webapi.event_.Controllers.ComentariosEventosController.Delete(System.Guid)">
+            <summary>
+            Enpoint da API que faz a chamada para o método de deletar um comentário
+            </summary>
+            <param name="id">Id do comentário a ser deletado</param>
+            <returns>Status code</returns>
+        </member>
+        <member name="T:webapi.event_.Migrations.db_v1">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.event_.Migrations.db_v1.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.event_.Migrations.db_v1.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.event_.Migrations.db_v1.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:webapi.event_.Migrations.Db_EventPlus">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.event_.Migrations.Db_EventPlus.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.event_.Migrations.Db_EventPlus.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:webapi.event_.Migrations.Db_EventPlus.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
